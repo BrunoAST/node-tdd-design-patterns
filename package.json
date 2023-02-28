@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/BrunoAST/node-tdd-design-patterns#readme",
   "devDependencies": {
-    "git-commit-msg-linter": "^4.7.4"
+    "@types/node": "^18.14.2",
+    "git-commit-msg-linter": "^4.7.4",
+    "typescript": "^4.9.5"
   }
 }
