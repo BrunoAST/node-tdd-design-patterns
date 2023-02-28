@@ -1,0 +1,23 @@
+{
+  "name": "node-tdd-design-patterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoAST/node-tdd-design-patterns.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunoAST/node-tdd-design-patterns/issues"
+  },
+  "homepage": "https://github.com/BrunoAST/node-tdd-design-patterns#readme",
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.7.4"
+  }
+}
