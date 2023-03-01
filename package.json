@@ -19,6 +19,7 @@
   "homepage": "https://github.com/BrunoAST/node-tdd-design-patterns#readme",
   "devDependencies": {
     "@types/node": "^18.14.2",
+    "eslint-config-standard-with-typescript": "^34.0.0",
     "git-commit-msg-linter": "^4.7.4",
     "typescript": "^4.9.5"
   }
