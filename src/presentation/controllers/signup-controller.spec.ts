@@ -6,45 +6,47 @@ const makeSut = (): SignupController => {
 };
 
 describe('Signup Controller', () => {
-  test.each([
-    {
-      body: {
-        email: 'any_email@mail.com',
-        password: 'any_password',
-        passwordConfirmation: 'any_password'
+  describe('Validation of required fields', () => {
+    test.each([
+      {
+        body: {
+          email: 'any_email@mail.com',
+          password: 'any_password',
+          passwordConfirmation: 'any_password'
+        },
+        field: 'name'
       },
-      field: 'name'
-    },
-    {
-      body: {
-        name: 'any_name',
-        password: 'any_password',
-        passwordConfirmation: 'any_password'
+      {
+        body: {
+          name: 'any_name',
+          password: 'any_password',
+          passwordConfirmation: 'any_password'
+        },
+        field: 'email'
       },
-      field: 'email'
-    },
-    {
-      body: {
-        name: 'any_name',
-        email: 'any_email@emal.com',
-        passwordConfirmation: 'any_password'
+      {
+        body: {
+          name: 'any_name',
+          email: 'any_email@emal.com',
+          passwordConfirmation: 'any_password'
+        },
+        field: 'password'
       },
-      field: 'password'
-    },
-    {
-      body: {
-        name: 'any_name',
-        email: 'any_email@emal.com',
-        password: 'any_password'
-      },
-      field: 'passwordConfirmation'
-    }
-  ])('Should return 400 if no $field is provided', ({ body, field }) => {
-    const sut = makeSut();
-    const httpRequest = { body };
-    const httpResponse = sut.handle(httpRequest);
+      {
+        body: {
+          name: 'any_name',
+          email: 'any_email@emal.com',
+          password: 'any_password'
+        },
+        field: 'passwordConfirmation'
+      }
+    ])('Should return 400 if no $field is provided', ({ body, field }) => {
+      const sut = makeSut();
+      const httpRequest = { body };
+      const httpResponse = sut.handle(httpRequest);
 
-    expect(httpResponse.statusCode).toBe(400);
-    expect(httpResponse.body).toEqual(new MissingParamError(field));
+      expect(httpResponse.statusCode).toBe(400);
+      expect(httpResponse.body).toEqual(new MissingParamError(field));
+    });
   });
 });
