@@ -1,6 +1,10 @@
 import { MissingParamError } from '../errors/missing-param-error';
 import { SignupController } from './signup';
 
+const makeSut = (): SignupController => {
+  return new SignupController();
+};
+
 describe('Signup Controller', () => {
   test.each([
     {
@@ -36,7 +40,7 @@ describe('Signup Controller', () => {
       field: 'passwordConfirmation'
     }
   ])('Should return 400 if no $field is provided', ({ body, field }) => {
-    const sut = new SignupController();
+    const sut = makeSut();
     const httpRequest = { body };
     const httpResponse = sut.handle(httpRequest);
 
